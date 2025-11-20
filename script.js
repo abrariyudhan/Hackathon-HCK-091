@@ -6,6 +6,7 @@ const hp = document.getElementById("hp");
 const poli = document.getElementById("poli");
 const tanggal = document.getElementById("tanggal");
 const sesi = document.getElementById("sesi");
+const deskripsi = document.getElementById("deskripsi")
 const btn = document.getElementById("submitBtn");
 const output = document.getElementById("output");
 
@@ -81,7 +82,8 @@ btn.addEventListener("click", function () {
         hp: hp.value,
         poli: poli.value,
         tanggal: tanggal.value,
-        sesi: sesi.value
+        sesi: sesi.value,
+        deskripsi: deskripsi.value !== "" ? deskripsi.value : "Tidak ada keterangan"
     };
 
     localStorage.setItem("pendaftaran", JSON.stringify(dataPendaftaran));
