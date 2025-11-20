@@ -168,6 +168,13 @@ input:focus, select:focus {
     button {
         display: none;
     }
+    .logo, header.hero { 
+        display: none; 
+    }
+    .container { 
+        box-shadow: none; 
+        border: none; 
+    }
 }
 
 button.secondary {
@@ -178,3 +185,29 @@ button.secondary:hover {
     background: #06182D;
 }
 
+.container {
+  max-width: 880px;
+  margin: 28px auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.field {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.field label { 
+    width: 120px; 
+    color: var(--muted); 
+    font-size: 0.95rem; 
+}
+.field input, .field select, .field textarea {
+  flex:1;
+  padding: 10px 12px;
+  border: 1px solid #E6E6E6;
+  border-radius: 8px;
+  font-size: 0.98rem;
+}
