@@ -8,36 +8,28 @@
 </head>
 <body>
 
-    <img src="hacktiv8.png" class="logo" alt="RS HACKTIV8">
-    <h1>RS HACKTIV8 RAWAT JALAN ASSIST</h1>
-    <div class="container">
-<form id="formPendaftaran">
+    <h1><img src="rsHacktib8.png" class="logo" alt="RS HACKTIV8"></h1>
 
-    <div class="field">
-        <label>Nama Pasien</label>
-        <input type="text" id="nama" placeholder="Masukkan nama pasien">
-    </div>
+    <form id="formPendaftaran">
 
-    <div class="field">
-        <label>Kelamin</label>
-        <select id="kelamin">
-            <option value="">-- Pilih Gender --</option>
-            <option>Pria</option>
-            <option>Wanita</option>
-        </select>
-    </div>
+    <h2>Data Pasien</h2>
+    <label>Nama Pasien</label>
+    <input type="text" id="nama" placeholder="Masukkan nama pasien">
 
-    <div class="field">
-        <label>Tanggal Lahir Pasien</label>
-        <input type="date" id="tanggalLahir">
-    </div>
+    <label>Kelamin</label>
+    <select id="kelamin">
+        <option value="">-- Pilih Gender --</option>
+        <option>Pria</option>
+        <option>Wanita</option>
+    </select>
 
-    <div class="field">
-        <label>Nomor HP</label>
-        <input type="text" id="hp" placeholder="Nomor HP aktif">
-    </div>
+    <label>Tanggal Lahir Pasien</label>
+    <input type="date" id="tanggalLahir"> <label>Nomor HP</label>
+    <input type="text" id="hp" placeholder="Nomor HP aktif">
 
-    <div class="field">
+    <hr style="margin: 25px 0; border: 0; border-top: 1px dashed #ccc;">
+
+    <h2>Detail Kunjungan</h2>
         <label>Poli Tujuan</label>
         <select id="poli">
             <option value="">-- Pilih Poli --</option>
@@ -50,14 +42,10 @@
             <option>Poli Jantung</option>
             <option>Rehabilitasi Medik</option>
         </select>
-    </div>
 
-    <div class="field">
         <label>Tanggal Berobat</label>
         <input type="date" id="tanggal">
-    </div>
 
-    <div class="field">
         <label>Sesi Kunjungan</label>
         <select id="sesi">
             <option value="">-- Pilih Sesi --</option>
@@ -65,17 +53,12 @@
             <option>Sesi 2: 08:30 - 11:00</option>
             <option>Sesi 3: 12:30 - 14:00</option>
         </select>
-    </div>
 
-    <div class="field">
         <label>Deskripsi</label>
-        <input type="text" id="deskripsi" placeholder="Deskripsi Penyakit">
-    </div>
+        <textarea id="deskripsi" placeholder="Deskripsi Penyakit" rows="4"></textarea>
 
-    <button type="button" id="submitBtn">Submit</button>
-
-</form>
-</div>
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
 
     <div id="output"></div>
 
