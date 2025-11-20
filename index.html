@@ -8,27 +8,28 @@
 </head>
 <body>
 
-    <img src="hacktiv8.png" class="logo" alt="RS HACKTIV8">
-    <h1>RS HACKTIV8 RAWAT JALAN ASSIST</h1>
+    <h1><img src="rsHacktib8.png" class="logo" alt="RS HACKTIV8"></h1>
 
     <form id="formPendaftaran">
 
-        <label>Nama Pasien</label>
-        <input type="text" id="nama" placeholder="Masukkan nama pasien">
+    <h2>Data Pasien</h2>
+    <label>Nama Pasien</label>
+    <input type="text" id="nama" placeholder="Masukkan nama pasien">
 
-        <label>Kelamin</label>
-        <select id="kelamin">
-            <option value="">-- Pilih Gender --</option>
-            <option>Pria</option>
-            <option>Wanita</option>
-        </select>
+    <label>Kelamin</label>
+    <select id="kelamin">
+        <option value="">-- Pilih Gender --</option>
+        <option>Pria</option>
+        <option>Wanita</option>
+    </select>
 
-        <label>Tanggal Lahir Pasien</label>
-        <input type="date" id="tanggalLahir" placeholder="Umur pasien">
+    <label>Tanggal Lahir Pasien</label>
+    <input type="date" id="tanggalLahir"> <label>Nomor HP</label>
+    <input type="text" id="hp" placeholder="Nomor HP aktif">
 
-        <label>Nomor HP</label>
-        <input type="text" id="hp" placeholder="Nomor HP aktif">
+    <hr style="margin: 25px 0; border: 0; border-top: 1px dashed #ccc;">
 
+    <h2>Detail Kunjungan</h2>
         <label>Poli Tujuan</label>
         <select id="poli">
             <option value="">-- Pilih Poli --</option>
@@ -54,7 +55,7 @@
         </select>
 
         <label>Deskripsi</label>
-        <input type="text" id="deskripsi" placeholder="Deskripsi Penyakit">
+        <textarea id="deskripsi" placeholder="Deskripsi Penyakit" rows="4"></textarea>
 
         <button type="button" id="submitBtn">Submit</button>
     </form>

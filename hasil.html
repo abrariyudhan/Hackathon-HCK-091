@@ -8,37 +8,77 @@
 <body>
 
     <div class="card">
-        <img src="hacktiv8.png" class="logo" alt="RS HACKTIV8">
-
-        <h2>RS HACKTIV8 RAWAT JALAN ASSIST</h2>
-        <h3>Kartu Pendaftaran Pasien</h3>
+        <h1><img src="rsHacktib8.png" class="logo" alt="RS HACKTIV8"></h1>
+        <h2>Kartu Pendaftaran Pasien</h2>
+        <span id="nomorReferalDisplay" class="referral-number"></span>
 
         <div id="hasil"></div>
 
         <button onclick="window.location.href='index.html'">← Kembali ke Form</button>
-        <button onclick="cetakPDF()">🖨 Cetak PDF</button>
+        <button class="secondary" onclick="cetakPDF()">🖨 Cetak PDF</button>
         <button onclick="hapusData()">🗑 Hapus Data</button>
     </div>
 
     <script>
         const data = JSON.parse(localStorage.getItem("pendaftaran"));
         const hasilDiv = document.getElementById("hasil");
+        // Ambil elemen baru
+        const nomorRefDisplay = document.getElementById("nomorReferalDisplay"); 
 
         if (!data) {
             hasilDiv.innerHTML = "<b>Data tidak ditemukan!</b>";
+            // Sembunyikan jika tidak ada data
+            nomorRefDisplay.style.display = 'none'; 
         } else {
+            // 1. Tampilkan Nomor Referal di atas
+            nomorRefDisplay.textContent = `REF: ${data.nomorAntrian}`;
+
+            // 2. Tampilkan sisa data di dalam div hasil
             hasilDiv.innerHTML = `
-                <p><b>Nomor Referall:</b> ${data.nomorAntrian}</p>
-                <p><b>Nama:</b> ${data.nama}</p>
-                <p><b>Kelamin:</b> ${data.kelamin}</p>
-                <p><b>Tanggal Lahir:</b> ${data.tanggalLahir}</p>
-                <p><b>Umur:</b> ${data.umur} tahun</p>
-                <p><b>Nomor HP:</b> ${data.hp}</p>
-                <p><b>Poli Tujuan:</b> ${data.poli}</p>
-                <p><b>Tanggal Kunjungan:</b> ${data.tanggal}</p>
-                <p><b>Sesi:</b> ${data.sesi}</p>
-                <p><b>Deskripsi:</b></p>
-                <textarea class="deskripsi-box" readonly>${data.deskripsi}</textarea>
+                <div class="data-group">
+                    <div class="data-item full-width">
+                        <div class="label">Nama Pasien</div>
+                        <div class="value">${data.nama}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="label">Tgl. Lahir</div>
+                        <div class="value">${data.tanggalLahir}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="label">Kelamin</div>
+                        <div class="value">${data.kelamin}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="label">Umur</div>
+                        <div class="value">${data.umur} tahun</div>
+                    </div>
+
+                    <div class="data-item full-width">
+                        <div class="label">Nomor HP Aktif</div>
+                        <div class="value">${data.hp}</div>
+                    </div>
+                </div>
+
+                <div class="data-group">
+                    <div class="data-item">
+                        <div class="label">Poli Tujuan</div>
+                        <div class="value">${data.poli}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="label">Tanggal Kunjungan</div>
+                        <div class="value">${data.tanggal}</div>
+                    </div>
+                    
+                    <div class="data-item full-width">
+                        <div class="label">Sesi Kunjungan</div>
+                        <div class="value">${data.sesi}</div>
+                    </div>
+                </div>
+
+                <div class="deskripsi-container">
+                    <div class="label">Deskripsi Penyakit</div>
+                    <textarea class="deskripsi-box" readonly>${data.deskripsi}</textarea>
+                </div>
             `;
         }
 
