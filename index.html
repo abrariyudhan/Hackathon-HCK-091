@@ -10,25 +10,34 @@
 
     <img src="hacktiv8.png" class="logo" alt="RS HACKTIV8">
     <h1>RS HACKTIV8 RAWAT JALAN ASSIST</h1>
+    <div class="container">
+<form id="formPendaftaran">
 
-    <form id="formPendaftaran">
-
+    <div class="field">
         <label>Nama Pasien</label>
         <input type="text" id="nama" placeholder="Masukkan nama pasien">
+    </div>
 
+    <div class="field">
         <label>Kelamin</label>
         <select id="kelamin">
             <option value="">-- Pilih Gender --</option>
             <option>Pria</option>
             <option>Wanita</option>
         </select>
+    </div>
 
+    <div class="field">
         <label>Tanggal Lahir Pasien</label>
-        <input type="date" id="tanggalLahir" placeholder="Umur pasien">
+        <input type="date" id="tanggalLahir">
+    </div>
 
+    <div class="field">
         <label>Nomor HP</label>
         <input type="text" id="hp" placeholder="Nomor HP aktif">
+    </div>
 
+    <div class="field">
         <label>Poli Tujuan</label>
         <select id="poli">
             <option value="">-- Pilih Poli --</option>
@@ -41,10 +50,14 @@
             <option>Poli Jantung</option>
             <option>Rehabilitasi Medik</option>
         </select>
+    </div>
 
+    <div class="field">
         <label>Tanggal Berobat</label>
         <input type="date" id="tanggal">
+    </div>
 
+    <div class="field">
         <label>Sesi Kunjungan</label>
         <select id="sesi">
             <option value="">-- Pilih Sesi --</option>
@@ -52,12 +65,17 @@
             <option>Sesi 2: 08:30 - 11:00</option>
             <option>Sesi 3: 12:30 - 14:00</option>
         </select>
+    </div>
 
+    <div class="field">
         <label>Deskripsi</label>
         <input type="text" id="deskripsi" placeholder="Deskripsi Penyakit">
+    </div>
 
-        <button type="button" id="submitBtn">Submit</button>
-    </form>
+    <button type="button" id="submitBtn">Submit</button>
+
+</form>
+</div>
 
     <div id="output"></div>
 
