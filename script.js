@@ -6,7 +6,7 @@ const hp = document.getElementById("hp");
 const poli = document.getElementById("poli");
 const tanggal = document.getElementById("tanggal");
 const sesi = document.getElementById("sesi");
-const deskripsi = document.getElementById("deskripsi")
+const deskripsi = document.getElementById("deskripsi");
 const btn = document.getElementById("submitBtn");
 const output = document.getElementById("output");
 
@@ -25,15 +25,61 @@ function hitungUmur(tgl) {
     return umur;
 }
 
-// Nomor antrian otomatis
-function buatNomorAntrian() {
-    let nomor = localStorage.getItem("nomorAntrian");
-    nomor = nomor ? Number(nomor) + 1 : 1;
-    localStorage.setItem("nomorAntrian", nomor);
-    return nomor;
+// =========================
+// 🔵  FUNGSI FORMAT KODE
+// =========================
+
+// Format tanggal → YYYYMMDD
+function formatTanggal(tgl) {
+    const date = new Date(tgl);
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}${mm}${dd}`;
 }
 
-// BUTTON SUBMIT
+// Kode Poli
+function kodePoli(poli) {
+    const mapping = {
+        "Poli Umum": "UMU",
+        "Poli Penyakit Dalam": "PDL",
+        "Poli Gigi": "GIG",
+        "Poli Otak": "OTK",
+        "Poli Bedah": "BDH",
+        "Poli Saraf": "SRF",
+        "Poli Jantung": "JTG",
+        "Rehabilitasi Medik": "RHM"
+    };
+
+    return mapping[poli] || "XXX";
+}
+
+// Kode sesi
+function kodeSesi(sesi) {
+    if (sesi.includes("Sesi 1")) return "S1";
+    if (sesi.includes("Sesi 2")) return "S2";
+    if (sesi.includes("Sesi 3")) return "S3";
+    return "SX";
+}
+
+// Buat nomor antrian final
+function buatNomorAntrian(tanggalLahir, poli, tanggalKunjungan, sesi) {
+    const lahir = formatTanggal(tanggalLahir);
+    const poliKode = kodePoli(poli);
+    const sesiKode = kodeSesi(sesi);
+
+    let counter = localStorage.getItem("counterAntrian");
+    counter = counter ? Number(counter) + 1 : 1;
+    localStorage.setItem("counterAntrian", counter);
+
+    const counterStr = String(counter).padStart(3, "0");
+
+    return `${lahir}-${poliKode}-${sesiKode}-${counterStr}`;
+}
+
+// =========================
+// 🔵  BUTTON SUBMIT
+// =========================
 btn.addEventListener("click", function () {
 
     let isValid = true;
@@ -52,14 +98,12 @@ btn.addEventListener("click", function () {
         return;
     }
 
-    // Validasi nomor HP
     if (hp.value !== "" && isNaN(hp.value)) {
         hp.style.border = "2px solid red";
         alert("Nomor HP harus angka!");
         return;
     }
 
-    // Validasi tanggal kunjungan
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const tglKunjungan = new Date(tanggal.value);
@@ -71,7 +115,16 @@ btn.addEventListener("click", function () {
     }
 
     const umurPasien = hitungUmur(tanggalLahir.value);
-    const nomorAntrian = buatNomorAntrian();
+
+    // =========================
+    // ⬇️ PEMANGGILAN KODE ANTRIAN BARU
+    // =========================
+    const nomorAntrian = buatNomorAntrian(
+        tanggalLahir.value,
+        poli.value,
+        tanggal.value,
+        sesi.value
+    );
 
     const dataPendaftaran = {
         nomorAntrian,
