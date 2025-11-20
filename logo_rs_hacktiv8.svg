@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220" role="img" aria-label="RS HACKTIV8 Rawat Jalan Assist logo">
+  <defs>
+    <linearGradient id="grad1" x1="0" x2="1">
+      <stop offset="0" stop-color="#1F6F78"/>
+      <stop offset="1" stop-color="#1A8A86"/>
+    </linearGradient>
+    <style>
+      .brand { font-family: 'Segoe UI', Roboto, Arial, sans-serif; fill: #0b4950; font-weight:700; }
+      .sub { font-family: 'Segoe UI', Roboto, Arial, sans-serif; fill: #0b4950; font-weight:600; font-size:20px;}
+      .tag { font-family: 'Segoe UI', Roboto, Arial, sans-serif; fill: #556; font-weight:400; font-size:16px;}
+      .icon-stroke { stroke: url(#grad1); stroke-width:4; fill: none; stroke-linecap:round; stroke-linejoin:round; }
+      .icon-fill { fill: url(#grad1); }
+    </style>
+  </defs>
+
+  <!-- Left badge: hand + heart + path (simple friendly badge) -->
+  <g transform="translate(28,18)">
+    <rect x="0" y="0" width="164" height="164" rx="20" fill="#fff" stroke="rgba(10,20,20,0.03)"/>
+    <!-- heart -->
+    <path class="icon-fill" d="M96 48c0 18-20 29-34 44-14-15-34-26-34-44 0-15 12-28 28-28 8 0 14 6 18 12 4-6 10-12 18-12 16 0 28 13 28 28z" transform="translate(12,12)"/>
+    <!-- small path to imply walk -->
+    <g transform="translate(24,92)" fill="#fff" opacity="0.95">
+      <ellipse cx="22" cy="8" rx="6" ry="8"/>
+      <ellipse cx="40" cy="8" rx="4" ry="6"/>
+      <ellipse cx="32" cy="26" rx="10" ry="14"/>
+    </g>
+    <!-- outline accent -->
+    <rect x="2" y="2" width="160" height="160" rx="18" fill="none" stroke="rgba(0,0,0,0.03)"/>
+  </g>
+
+  <!-- Text block -->
+  <g transform="translate(220,40)">
+    <text x="0" y="30" class="brand" font-size="32">RS HACKTIV8</text>
+    <text x="0" y="66" class="brand" font-size="24">RAWAT JALAN ASSIST</text>
+    <text x="0" y="100" class="tag">Pendampingan & pelayanan rawat jalan untuk lansia</text>
+  </g>
+
+  <!-- Decorative line -->
+  <line x1="220" y1="112" x2="740" y2="112" stroke="#e9eef0" stroke-width="2"/>
+
+</svg>
