@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    width: 350px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #3c78d8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #2a5dab;
+}
+
+#output {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card {
+    width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    background: #3c78d8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.card button:hover {
+    background: #2a5dab;
+}

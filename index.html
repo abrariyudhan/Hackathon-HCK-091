@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS HACKTIV8 RAWAT JALAN ASSIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>RS HACKTIV8 RAWAT JALAN ASSIST</h1>
+
+    <form id="formPendaftaran">
+
+        <label>Nama Pasien</label>
+        <input type="text" id="nama" placeholder="Masukkan nama pasien">
+
+        <label>Kelamin</label>
+        <input type="text" id="kelamin" placeholder="Laki-laki / Perempuan">
+
+        <label>Tanggal Lahir Pasien</label>
+        <input type="date" id="tanggalLahir" placeholder="Umur pasien">
+
+        <label>Nomor HP</label>
+        <input type="text" id="hp" placeholder="Nomor HP aktif">
+
+        <label>Poli Tujuan</label>
+        <select id="poli">
+            <option value="">-- Pilih Poli --</option>
+            <option>Poli Umum</option>
+            <option>Poli Penyakit Dalam</option>
+            <option>Poli Gigi</option>
+            <option>Poli Otak</option>
+            <option>Poli Bedah</option>
+            <option>Poli Saraf</option>
+            <option>Poli Jantung</option>
+            <option>Rehabilitasi Medik</option>
+        </select>
+
+        <label>Tanggal Berobat</label>
+        <input type="date" id="tanggal">
+
+        <label>Sesi Kunjungan</label>
+        <select id="sesi">
+            <option value="">-- Pilih Sesi --</option>
+            <option>Sesi 1: 06:00 - 08:30</option>
+            <option>Sesi 2: 08:30 - 11:00</option>
+            <option>Sesi 3: 12:30 - 14:00</option>
+        </select>
+
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <img src="logo.png" class="logo" alt="Logo Rumah Sakit">
+
+        <h2>RS HACKTIV8 RAWAT JALAN ASSIST</h2>
+        <h3>Kartu Pendaftaran Pasien</h3>
+
+        <div id="hasil"></div>
+
+        <button onclick="window.location.href='index.html'">← Kembali ke Form</button>
+        <button onclick="cetakPDF()">🖨 Cetak PDF</button>
+        <button onclick="hapusData()">🗑 Hapus Data</button>
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("pendaftaran"));
+        const hasilDiv = document.getElementById("hasil");
+
+        if (!data) {
+            hasilDiv.innerHTML = "<b>Data tidak ditemukan!</b>";
+        } else {
+            hasilDiv.innerHTML = `
+                <p><b>Nomor Antrian:</b> ${data.nomorAntrian}</p>
+                <p><b>Nama:</b> ${data.nama}</p>
+                <p><b>Kelamin:</b> ${data.kelamin}</p>
+                <p><b>Tanggal Lahir:</b> ${data.tanggalLahir}</p>
+                <p><b>Umur:</b> ${data.umur} tahun</p>
+                <p><b>Nomor HP:</b> ${data.hp}</p>
+                <p><b>Poli Tujuan:</b> ${data.poli}</p>
+                <p><b>Tanggal Kunjungan:</b> ${data.tanggal}</p>
+                <p><b>Sesi:</b> ${data.sesi}</p>
+            `;
+        }
+
+        function cetakPDF() {
+            window.print();
+        }
+
+        function hapusData() {
+            localStorage.removeItem("pendaftaran");
+            alert("Data pendaftaran telah dihapus.");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
